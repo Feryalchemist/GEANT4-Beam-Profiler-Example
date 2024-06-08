@@ -1,0 +1,56 @@
+/run/initialize
+
+/vis/open OGL 30x30-0+0
+/vis/viewer/set/autoRefresh false
+/vis/verbose errors
+/vis/drawVolume
+
+/vis/viewer/set/viewpointVector -1 0 0
+/vis/viewer/set/lightsVector -1 0 0
+/vis/viewer/set/background 1 1 1 1
+/vis/viewer/set/style surface
+/vis/viewer/set/style wireframe
+/vis/viewer/set/auxiliaryEdge true
+/vis/viewer/set/lineSegmentsPerCircle 100
+
+/vis/scene/add/trajectories smooth
+/vis/modeling/trajectories/create/drawByCharge
+/vis/modeling/trajectories/drawByCharge-0/default/setDrawStepPts true
+/vis/modeling/trajectories/drawByCharge-0/default/setStepPtsSize 2
+
+#/vis/scene/add/axes 0 0 0
+/vis/scene/add/hits
+/vis/scene/add/electricField 5
+/vis/scene/endOfEventAction accumulate
+
+/vis/geometry/set/forceSolid IonChamber_1
+/vis/geometry/set/colour IonChamber_1 0.1 0.5 0.5 0 0.1
+/vis/geometry/set/forceSolid IonChamber_2
+/vis/geometry/set/colour IonChamber_2 0.1 0.5 0.5 0 0.1
+
+/vis/geometry/set/forceWireframe Membrane_1
+/vis/geometry/set/colour Membrane_1 1 0 1 0 1
+/vis/geometry/set/forceWireframe Electrode_1 
+/vis/geometry/set/colour Electrode_1 1 0.5 0 0.5 0.9
+/vis/geometry/set/forceWireframe Membrane_2
+/vis/geometry/set/colour Membrane_2 1 0 1 0 0.9
+/vis/geometry/set/forceWireframe Electrode_2 
+/vis/geometry/set/colour Electrode_2 1 0.5 0 0.5 1
+/vis/geometry/set/forceWireframe Membrane_3
+/vis/geometry/set/colour Membrane_3 1 0 1 0 0.9
+/vis/geometry/set/forceWireframe Electrode_3 
+/vis/geometry/set/colour Electrode_3 1 0.5 0 0.5 0.9
+/vis/geometry/set/forceWireframe Membrane_4
+/vis/geometry/set/colour Membrane_4 1 0 1 0 1
+/vis/geometry/set/forceWireframe Electrode_4 
+/vis/geometry/set/colour Electrode_4 1 0.5 0 0.5 0.9
+
+/vis/viewer/set/viewpointThetaPhi 30 30
+/vis/viewer/zoom 3.2
+
+/vis/viewer/set/autoRefresh true
+/vis/verbose warnings
+/vis/viewer/flush
+
+/vis/ogl/set/displayListLimit 9999999999
+/vis/scene/endOfEventAction accumulate 1000
